@@ -33,7 +33,7 @@ if ($hide -eq 1){
 # Descargar imágenes personalizadas y sonido
 iwr -Uri 'https://raw.githubusercontent.com/gootalive743/MarioBobo-Prank/main/mario_bobo_1.png' -OutFile "$env:TEMP\mario_bobo_1.png"
 iwr -Uri 'https://raw.githubusercontent.com/gootalive743/MarioBobo-Prank/main/mario_bobo_2.png' -OutFile "$env:TEMP\mario_bobo_2.png"
-iwr -Uri 'https://github.com/beigeworm/assets/raw/main/idiot.wav' -OutFile "$env:TEMP\sound.wav"
+iwr -Uri 'https://raw.githubusercontent.com/beigeworm/assets/main/idiot.wav' -OutFile "$env:TEMP\sound.wav"
 sleep 1
 
 Function SpawnImage{
@@ -53,11 +53,10 @@ $job2 = {
     Add-Type -AssemblyName System.Drawing
     
     $form = New-Object System.Windows.Forms.Form
-    $form.Text = "Mario bobo"
+    $form.Text = "Mario Bobo"
     $form.Width = 350
     $form.Height = 300
     $form.TopMost = $true
-    $form.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon("C:\Windows\System32\DFDWiz.exe")
     $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
     
     $screen = [System.Windows.Forms.Screen]::PrimaryScreen
@@ -129,7 +128,7 @@ function MouseState {
     while ($true) {
         $currentState = [Windows.Forms.Control]::MouseButtons
         if ($previousState -ne $currentState) {
-            Write-Host "Mouse Click Detected!"
+            Write-Host "¡Se detectó un clic en el ratón!"
             $previousState = $currentState
             SpawnImage
             break
